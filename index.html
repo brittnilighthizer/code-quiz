@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Code Quiz</title>
 </head>
 <body>
-    <div id="container">
-        <div id="start">Start Quiz!</div>
-        <div id="quiz" style="display: none"></div>
-            <div id="question"></div>
-            <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer"></div>
-                <div class="choice" id="B" onclick="checkAnswer"></div>
-                <div class="choice" id="C" onclick="checkAnswer"></div>
-            </div>
-        <div id="score"></div>
-    </div>
+    <main id="container">
+        <!-- shouldnt be constantly seen-->
+        <button id="start">Start Quiz!</button>
 
-    <script src="test.js"></script>
+        <div id="quiz" style="display: none"></div>
+            <header></header>
+                <h1 id="question">What is the question? That is the question...</h1>
+            <section id="choices">
+                <button id="choice" value="A"> a) A possible choice</button>
+                <br>
+                <button id="choice" value="B">b) could also be a choice</button>
+                <br>
+                <button id="choice" value="C">c) definitely not a choice</button>
+            </section>
+            <br><br>
+            <button id="submit-button">Submit</button>
+        <aside id="score">Current Score: </aside>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -50,8 +50,7 @@ const questions = [{
     choiceB: "placeholderB",
     choiceC: "placeholderC",
     correct: "A"
-    }
-}]
+    }]
 
 <div id="choices">
 <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
