@@ -20,36 +20,6 @@ const questions = [{
     choiceB: "placeholderB",
     choiceC: "placeholderC",
     correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
     }]
 
 <div id="choices">
@@ -137,3 +107,16 @@ THEN I can save my initials and score
 # prompt initials
 # use prompt value (userInitials) + score and present 
 
+# from calculator activity
+$(".btn-primary")  
+# this targetted all of the buttons by the class/sub-class
+$(".btn-primary").on("click", function()){
+    console.log(this)
+}
+
+
+# 
+  $(".number").on("click", function(){
+  $("#first-number").append($(this).val())
+  console.log(this);
+});
