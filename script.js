@@ -83,6 +83,9 @@ function checkChoice() {
     if (userClick === questions[questionIndex].correctAnswer) {
         score++;
     }
+    else {
+        score--;
+    }
     questionIndex++;
     if (qAvail <= questionIndex) {
         alert("You've answered all questions.")
@@ -116,5 +119,8 @@ var timer = setInterval( function () {
     // update the time on the front end//
     time--;
 } , 1000)
+
+$("#timer").text("Current Time: " + time);
+
 
 clearInterval(timer);
