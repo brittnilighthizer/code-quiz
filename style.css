@@ -2,26 +2,46 @@
 #container {
   font-family: monospace;
   background-image: url(bokeh.jpg);
-  height: 100%;
+  background-size: cover; 
+  height: 800px;
   margin: 10px;
   padding: 5%;
 
 }
 
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
 #quiz {
   text-align: center;
+  background-color: white;
+  height: 300px;
+  padding-top: 30px;
 }
 
 #score, #timer {
-  text-align: center;
   padding: 20px;
-  border: thin;
+  background-color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 #start {
   margin-top: 2%;
   background: grey;
   border: 1px solid black;
+  font-size: 40px;
+  font-family: monospace;
 }
 
 #start:hover {

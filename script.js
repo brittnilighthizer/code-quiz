@@ -70,7 +70,7 @@ function nextQuestion () {
     card.empty();
     card.append("<h2>" + questions[questionIndex].question + "</h2>");
     for (var i = 0; i < questions[questionIndex].choices.length; i++) {
-        card.append("<input type='radio' id='radio-buttons' name='question-" + questionIndex +
+        card.append("<p><input type='radio' id='radio-buttons' name='question-" + questionIndex +
         "' value='" + questions[questionIndex].choices[i] + "''>" + questions[questionIndex].choices[i]);
     }
     $("#score").text("Current Score: " + score);
@@ -116,11 +116,10 @@ $("#quiz").on("click", "#radio-buttons", function (){
 var time = 60 
 var timer = setInterval( function () {
     
-    // update the time on the front end//
     time--;
 } , 1000)
 
-$("#timer").text("Current Time: " + time);
+$("#timer").text("Time: " + time + " seconds");
 
 
 clearInterval(timer);
