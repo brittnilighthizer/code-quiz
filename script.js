@@ -38,15 +38,11 @@ function nextQuestion () {
 
 function checkChoice() {
     userClick = $( "input:checked" ).val();
-    // console.log(clickedButton);
-    console.log(userClick);
     if (userClick === questions[questionIndex].correctAnswer) {
         score++;
-        alert("This was the correct answer.")
     }
     questionIndex++;
     if (qAvail <= questionIndex) {
-        alert("You've answered all questions.")
         clearInterval(timer);
     }
     else {
