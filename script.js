@@ -1,41 +1,78 @@
-const questions = [
-    ["What color is the sky?", "Blue", "Red", "Green", A],
-    ["What color are the trees?", "Blue", "Red", "Green", C],
-    ["What color is the ocean?", "Blue", "Red", "Green", A],
-    ["What color is my car?", "Grey", "Black", "White", B],
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+var card = $("#quiz");
+// QUESTIONS
+var questions = [
+    {
+        question: "What color is the sky?",
+        choices: ["Blue", "Red", "Green"],
+        correctAnswer: "Blue"
+    },{
+        question: "What color are the trees?",
+        choices: ["Blue", "Red", "Green"],
+        correctAnswer: "Green"
+    },{
+        question: "What color is the ocean?",
+        choices: ["Blue", "Red", "Green"],
+        correctAnswer: "Blue"
+    },{
+        question: "What color is my car?",
+        choices: ["Black", "Red", "White"],
+        correctAnswer: "Black"
+    }
 ];
+var questionIndex = 0;
+var score = 0;
+var qAvail = questions.length;
 
-let score = 0;
-let quizIndex = 0;
+function nextQuestion () {
+    card.empty();
+    card.append("<h2>" + questions[questionIndex].question + "</h2>");
+    for (var i = 0; i < questions[questionIndex].choices.length; i++) {
+        card.append("<input type='radio' id='radio-buttons' name='question-" + questionIndex +
+        "' value='" + questions[questionIndex].choices[i] + "''>" + questions[questionIndex].choices[i]);
+    }
+    $("#score").text("Current Score: " + score);
+}
 
-// function startQuiz() {
-//     document.getElementById("question").innerHTML = questions[0].question;
-//     index++;
-// }
-
-$question = $("<h1>"+questions[quizIndex][0]+"</h1>")
-$answer1 = $("<button value = '1' >"+questions[quizIndex][1]+"</button>")
-$answer2 = $("<button value = '2' >"+questions[quizIndex][2]+"</button>")
-$answer3 = $("<button value = '3' >"+questions[quizIndex][3]+"</button>")
-
-
-function initQuiz(index) {
-    if ()
+function checkChoice() {
+    userClick = $( "input:checked" ).val();
+    // console.log(clickedButton);
+    console.log(userClick);
+    if (userClick === questions[questionIndex].correctAnswer) {
+        score++;
+        alert("This was the correct answer.")
+    }
+    questionIndex++;
+    if (qAvail <= questionIndex) {
+        alert("You've answered all questions.")
+        clearInterval(timer);
+    }
+    else {
+        nextQuestion();
+    }
     
 }
 
-function checkAnswer() {
-    const userChoice = this;
-    console.log(userChoice);
-    if (userChoice === questions[index].correct) {
-        alert("Correct! +1 point");
-        score++;
-        document.getElementById("score").innerHTML = "Current Score: " + score;
+$(document).on("click", "#start", function () {
+    function initQuiz() {
+       nextQuestion();
     }
-    else  {
-        alert("Incorrect! -1 point");
-        score--;
-        document.getElementById("score").innerHTML = "Current Score: " + score;
-    }
-}
+    initQuiz();
 
+});
+
+$("#quiz").on("click", "#radio-buttons", function (){
+    checkChoice();
+    console.log("click works")
+});
+});
+var time = 60;
+var timer = setInterval( function () {
+    time--;
+    // update the time on the front end//
+
+} , 1000)
+
+clearInterval(timer);

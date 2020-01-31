@@ -3,24 +3,6 @@
 
 # Find questions for Quiz [make sure it is more than what the user can complete]
 const questions = [{
-    question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    },
-    {question: "What does HTML stand for?",
-    choiceA: "placeholderA",
-    choiceB: "placeholderB",
-    choiceC: "placeholderC",
-    correct: "A"
-    }]
 
 <div id="choices">
 <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
@@ -77,7 +59,6 @@ var countdown = function(num) {
 
 WHEN I answer a question
 # prompt / select (how do i do multiple choice?)
-got that. 
 
 THEN I am presented with another question
 # activates next question
