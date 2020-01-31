@@ -1,20 +1,28 @@
-#question {
-    margin: 50px;
-    padding: 10px;
-    position: relative;
-    width: 70%;
-  }
 
-#choices button {
-    float: left;
-    margin: 8px 0px 0px 8px;
-    padding: 4px 8px;
-    background: #9ACFCC;
-    color: #00403C;
-    font-size: 14px;
-  }
+#container {
+  font-family: monospace;
+  background-image: url(bokeh.jpg);
+  height: 100%;
+  margin: 10px;
+  padding: 5%;
 
-  #choices button:hover {
-    background: #36a39c;
-    color: #FFF;
-  }
+}
+
+#quiz {
+  text-align: center;
+}
+
+#score {
+  text-align: center;
+}
+
+#start {
+  margin-top: 2%;
+  background: grey;
+  border: 1px solid black;
+}
+
+#start:hover {
+  background: lightcoral;
+  border: 2px solid black;
+}
