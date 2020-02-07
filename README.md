@@ -1,4 +1,10 @@
+# Click below to see the things:
+https://brittnilighthizer.github.io/code-quiz/
+
+-------------------------------------------------------------------------------
+
 # psuedo code-quiz 
+below is the brainstorming stage...
 ------
 
 # Find questions for Quiz [make sure it is more than what the user can complete]
