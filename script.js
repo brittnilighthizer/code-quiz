@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
-
+var time = 60
+var timer ;
 var card = $("#quiz");
 // QUESTIONS
 var questions = [
@@ -57,7 +58,7 @@ var questions = [
         choices: ["Triangle", "Diamond", "Circle"],
         correctAnswer: "Triangle"
     },{
-        question: "What color means slow-down on a street-lamp?",
+        question: "What color means 'slow-down'?",
         choices: ["Red", "Yellow", "Green"],
         correctAnswer: "Yellow"
     }
@@ -88,11 +89,10 @@ function checkChoice() {
     }
     questionIndex++;
     if (qAvail <= questionIndex) {
-        alert("You've answered all questions.")
         clearInterval(timer);
         card.empty();
         $("#score").text("Final Score: " + score);
-
+        $("#quiz").text("You've completed the quiz!");
     }
     else {
         nextQuestion();
@@ -106,6 +106,20 @@ $(document).on("click", "#start", function () {
     }
     initQuiz();
 
+    
+    timer = setInterval( function x () {
+    
+    time--;
+    console.log(time)
+    $("#timer").text("Time: " + time + " seconds");
+    
+    if (time <= 0) {
+    clearInterval(timer);
+    }
+
+    return x
+} , 1000)
+
 });
 
 $("#quiz").on("click", "#radio-buttons", function (){
@@ -113,13 +127,6 @@ $("#quiz").on("click", "#radio-buttons", function (){
     console.log("click works")
 });
 });
-var time = 60 
-var timer = setInterval( function () {
-    
-    time--;
-} , 1000)
-
-$("#timer").text("Time: " + time + " seconds");
 
 
-clearInterval(timer);
+
