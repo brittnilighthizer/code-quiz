@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Code Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-    <main id="container">
-        <div id="quiz">
-            <h1>My Janky Quiz</h1>
-                <button id="start">Start Quiz!</button>
-            <section id="question"></section>
-            <section id="choices"></section>
+    <section class="hero is-large is-warning is-bold" id="container">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title" id="quiz">MAKE THIS QUIZ MORE INTERESTING</h1>
+                <!-- THIS NEEDS TO DISAPPEAR WHEN THE QUIZ HAS STARTED -->
+                    <button class="button is-large" id="start">Start Quiz!</button>
+                    <br><br>
+                    <section id="question">
+                    </section>
+                    <section id="choices"></section>
+            </div>
+            <br>
+            <aside id="score"></aside>
+            <aside id="timer"></aside>
+
+
         </div>
-        <br>
-        <aside id="score"></aside>
-        <aside id="timer"></aside>
-
-    </main>
-
+        </div>
+    </section>
     <script type="text/javascript" src="script.js"></script>
+
 </body>
+
 </html>

@@ -71,7 +71,7 @@ function nextQuestion () {
     card.empty();
     card.append("<h2>" + questions[questionIndex].question + "</h2>");
     for (var i = 0; i < questions[questionIndex].choices.length; i++) {
-        card.append("<p><input type='radio' id='radio-buttons' name='question-" + questionIndex +
+        card.append(`<p><input type='radio' id='radio-buttons' name='question-` + questionIndex +
         "' value='" + questions[questionIndex].choices[i] + "''>" + questions[questionIndex].choices[i]);
     }
     $("#score").text("Current Score: " + score);
