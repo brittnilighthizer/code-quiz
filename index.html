@@ -12,21 +12,29 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body> 
+<body>
     <section class="hero is-large is-warning is-bold" id="container">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title" id="quiz">MAKE THIS QUIZ MORE INTERESTING</h1>
                 <!-- THIS NEEDS TO DISAPPEAR WHEN THE QUIZ HAS STARTED -->
-                    <button class="button is-large" id="start">Start Quiz!</button>
-                    <br><br>
-                    <section id="question">
-                    </section>
-                    <section id="choices"></section>
+                <button class="button is-large" id="start">Start Quiz!</button>
+                <br><br>
+                <section id="question">
+                </section>
+                <section id="choices"></section>
             </div>
             <br>
             <aside id="score"></aside>
             <aside id="timer"></aside>
+            <br><br>
+            <section id="highscores">
+                <div>
+                    <h2 id="highestscore"></h2>
+                </div>
+            </section>
+            <input id="initials" class="input" type="text" placeholder="Enter your initials here">
+            <button id="initialsSubmit" class="button" type="submit">Submit</button>
 
 
         </div>

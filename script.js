@@ -1,10 +1,12 @@
 $(document).ready(function () {
-    $("#initials").hide();
+    // $("#initials").hide();
 
     console.log("ready!");
     var time = 60
     var timer;
     var card = $("#quiz");
+    var highestScores = [];
+
     // QUESTIONS
     var questions = [
         {
@@ -120,42 +122,74 @@ $(document).ready(function () {
         $("#quiz").text("You've completed the quiz!");
 
         $("#initials").show();
+        $("#initialsSubmit").show();
+        // card.append();
 
-        // render the local storage of initials and high scores.
-
-        $(".fiveDay").append(fiveDayForecast);
     }
 
-    window.localStorage.setItem(".fiveday", JSON.stringify(runningHistory))
+    $("#initialsSubmit").on("click", function () {
+        userInitials = $("#initials").val()
+        $("#highscores").append(userInitials);
+        $("#highscores").append("Final Score: " + score + " ");
 
-}
-
-    $(document).on("click", "#start", function () {
-    function initQuiz() {
-        nextQuestion();
-    }
-    initQuiz();
-
-
-    timer = setInterval(function x() {
-
-        time--;
-        console.log(time)
-        $("#timer").text("Time: " + time + " seconds");
-
-        if (time <= 0) {
-            clearInterval(timer);
+        var userScore = {
+            userInitials: userInitials,
+            score: score
         }
 
-        return x
-    }, 1000)
+        highestScores = JSON.parse(window.localStorage.getItem(("HighScore"))) || [];
 
-});
+        highestScores.push(userScore);
 
-$("#quiz").on("click", "#radio-buttons", function () {
-    checkChoice();
-    console.log("click works")
-});
+        window.localStorage.setItem(("HighScore"), JSON.stringify(highestScores));
+
+        highestScores = JSON.parse(window.localStorage.getItem(("HighScore")));
+
+        var highest;
+        var highestNum = -100;
+
+        for (let i = 0; i < highestScores.length; i++) {
+            const arrScores = highestScores[i].score;
+
+            console.log(arrScores);
+
+            if (arrScores > highestNum) {
+                highestNum = arrScores;
+                highest = highestScores[i];
+                console.log(highest);
+            }
+            
+        }
+        $("#highestscore").text(highest.userInitials + " " + " " + highest.score);
+    });
+
+
+    $(document).on("click", "#start", function () {
+        function initQuiz() {
+            nextQuestion();
+        }
+        initQuiz();
+
+
+        timer = setInterval(function x() {
+
+            time--;
+            console.log(time)
+            $("#timer").text("Time: " + time + " seconds");
+
+            if (time <= 0) {
+                clearInterval(timer);
+            }
+
+            return x
+        }, 1000)
+
+    });
+
+    $("#quiz").on("click", "#radio-buttons", function () {
+        checkChoice();
+        console.log("click works")
+    });
 });
 
 
